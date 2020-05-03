@@ -1,0 +1,56 @@
+.App {
+  background-image: linear-gradient(#99DFF9, white, white);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.AppHeader {
+  font-size: 1.8em;
+  text-align: left;
+  align-self: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.AppLogo {
+  height: 110px;
+  width: 100px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+#email-input, #password-input, .input span, .input div {
+  margin: 10px 0px 0px 0px;
+}
+
+#email-input, #password-input {
+  border-style: none;
+  border-radius: 5px;
+  height: 25px;
+  width: 100%;
+}
+
+.submit-and-register {
+  display: flex;
+  justify-content: space-between;
+}
+
+#btn-sign-in, #btn-cancel {
+  border-radius: 5px;
+  border: none;
+  margin: 10px 15px 15px 0px;
+  width: 50%;
+  height: 30px;
+}
