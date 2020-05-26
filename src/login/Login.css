@@ -14,14 +14,14 @@
 
 .form {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .AppLogo {
-  height: 110px;
-  width: 100px;
+  height: 150px;
+  width: 110px;
+  margin-right: 15px;
 }
 
 .input {
@@ -33,13 +33,33 @@
 
 #email-input, #password-input, .input span, .input div {
   margin: 10px 0px 0px 0px;
+  font-size: 0.7em;
+}
+
+.status {
+  height: 10px;
+  width: 10px;
+  background-color: rgb(10, 200, 10);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.red {
+  background-color: rgb(200, 10, 10);
+}
+
+.input > span > select {
+  border: 0px;
+  outline: 0px;
 }
 
 #email-input, #password-input {
   border-style: none;
   border-radius: 5px;
   height: 25px;
-  width: 100%;
+  width: 140%;
+  font-size: 0.8em;
+  padding: 5px;
 }
 
 .submit-and-register {
