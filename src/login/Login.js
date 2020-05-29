@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
+
 import './Login.css';
 import logo from '../resources/msn.png';
 
-
-export default function Login() {
-    const [status, setStatus] = useState('available')
-
+function Login() {
     function signInClick(e) {
         e.preventDefault();
     }
@@ -14,17 +12,6 @@ export default function Login() {
         e.preventDefault();
     }    
     
-    function selectOnChange(e) {
-        let status = e.target.value
-    
-        if (status === 'available')
-            setStatus('available')
-        else if (status === 'occupied')
-            setStatus('occupied')
-        else if (status === 'invisible')
-            setStatus('invisible')
-    }
-
     return (
         <div className="App">
             <header className="AppHeader">
@@ -36,9 +23,9 @@ export default function Login() {
                     <input id="email-input" placeholder="example555@hotmail.com" required />
                     <input type="password" id="password-input" placeholder="password" required />
                     <span><a href="##">Forgot your password?</a></span>
-                    <span>Sign in as: &nbsp;
+                    <span>Sign in as:
                         <span className="status"></span>
-                        <select onChange={selectOnChange}>
+                        <select className="select-status">
                             <option value="available" defaultValue>Available</option>
                             <option value="occupied">Occupied</option>
                             <option value="invisible">Invisible</option>
@@ -62,3 +49,4 @@ export default function Login() {
     );
 }
 
+export default Login;
