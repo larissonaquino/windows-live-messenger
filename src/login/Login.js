@@ -1,16 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 
+import api from '../services/api'
 import './Login.css';
 import logo from '../resources/msn.png';
 
 function Login() {
-    function signInClick(e) {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    async function signInClick(e) {
         e.preventDefault();
+
+        const response = await api.post('/authenticate', {
+            email,
+            password
+        })
+
+        if (response) {
+            // navigate to initial page here
+        }
     }
     
     function cancelClick(e) {
         e.preventDefault();
-    }    
+    }
+
+    function emailOnChange(email) {
+        setEmail(email)
+    }
+
+    function passwordOnChange(password) {
+        setPassword(password)
+    }
     
     return (
         <div className="App">
@@ -20,8 +41,8 @@ function Login() {
             <form className="form">
                 <img src={logo} className="AppLogo" alt="Logo" />
                 <div className="input">
-                    <input id="email-input" placeholder="example555@hotmail.com" required />
-                    <input type="password" id="password-input" placeholder="password" required />
+                    <input id="email-input" placeholder="example555@hotmail.com" required onChange={e => emailOnChange(e.target.value)} value={email} />
+                    <input type="password" id="password-input" placeholder="password" required onChange={e => passwordOnChange(e.target.value)} value={password} />
                     <span><a href="##">Forgot your password?</a></span>
                     <span>Sign in as:
                         <span className="status"></span>
