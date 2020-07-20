@@ -15,7 +15,10 @@ function Login() {
             email,
             password
         })
-
+        .catch(e => {
+            console.log('erro ao tentar autenticar-se', e)
+        })
+        
         if (response) {
             // navigate to initial page here
         }
@@ -23,14 +26,6 @@ function Login() {
     
     function cancelClick(e) {
         e.preventDefault();
-    }
-
-    function emailOnChange(email) {
-        setEmail(email)
-    }
-
-    function passwordOnChange(password) {
-        setPassword(password)
     }
     
     return (
@@ -41,8 +36,8 @@ function Login() {
             <form className="form">
                 <img src={logo} className="AppLogo" alt="Logo" />
                 <div className="input">
-                    <input id="email-input" placeholder="example555@hotmail.com" required onChange={e => emailOnChange(e.target.value)} value={email} />
-                    <input type="password" id="password-input" placeholder="password" required onChange={e => passwordOnChange(e.target.value)} value={password} />
+                    <input id="email-input" placeholder="example555@hotmail.com" required onChange={e => setEmail(e.target.value)} value={email} />
+                    <input type="password" id="password-input" placeholder="password" required onChange={e => setPassword(e.target.value)} value={password} />
                     <span><a href="##">Forgot your password?</a></span>
                     <span>Sign in as:
                         <span className="status"></span>

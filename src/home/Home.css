@@ -1,0 +1,81 @@
+.App {
+    background-image: linear-gradient(rgb(12, 179, 240), rgb(150, 201, 243), white);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+}
+
+header img {
+    width: 80px;
+    height: 80px;
+    border: 4px solid rgb(10, 200, 10);
+    border-radius: 20px;
+    align-self: flex-start;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.signature {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-items: center;
+    margin-left: 15px;
+    align-content: flex-end;
+}
+
+.userName {
+    margin-top: 1px;
+    text-align: left;
+}
+
+.user-name .status-title {
+    font-size: 14px;
+}
+
+.statusMessage {
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.search-session {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+}
+
+#search-user {
+    flex: 1 0 1000px;
+}
+
+.user-list {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 20px 5px 5px 5px;
+}
+
+.user-list-name, .user-list-subnick {
+    font-size: 14px;
+}
+
+.user-list-name {
+    color: #222222;
+}
+
+.user-list-subnick {
+    color: #AAAAAA
+}
