@@ -3,10 +3,14 @@ import React, { useState } from 'react'
 import api from '../services/api'
 import './Login.css';
 import logo from '../resources/msn.png';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    const notify = (text, type) => toast(text, {type: type});
 
     async function signInClick(e) {
         e.preventDefault();
@@ -19,13 +23,19 @@ function Login() {
             console.log('erro ao tentar autenticar-se', e)
         })
         
-        if (response) {
-            // navigate to initial page here
+        if (!response || !response.data.authenticated) {
+            notify('E-mail or password not valid', 'error');
+            return;
         }
+        
+        // navigate to home page here
+        notify('Logged in succesfuly!', 'success');
     }
     
     function cancelClick(e) {
         e.preventDefault();
+        setEmail('');
+        setPassword('');
     }
     
     return (
@@ -59,6 +69,7 @@ function Login() {
                         <button type="submit" id="btn-sign-in" onClick={signInClick}>Sign in</button>
                         <button type="submit" id="btn-cancel" onClick={cancelClick}>Cancel</button>
                     </div>
+                    <ToastContainer style={{fontSize: '30px'}} />
                 </div>
             </form>
         </div>
